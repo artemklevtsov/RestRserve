@@ -301,8 +301,8 @@ Adds endpoint to show <a href='https://swagger.io/tools/swagger-ui/'>Swagger UI<
 <span class='no'>desc_rq</span> <span class='kw'>=</span> <span class='no'>Request</span>$<span class='fu'>new</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"/desc"</span>)
 <span class='no'>say_rq</span> <span class='kw'>=</span> <span class='no'>Request</span>$<span class='fu'>new</span>(<span class='kw'>path</span> <span class='kw'>=</span> <span class='st'>"/say/anonym"</span>, <span class='kw'>parameters_query</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='st'>"message"</span> <span class='kw'>=</span> <span class='st'>"Hola"</span>))
 <span class='co'># process prepared requests</span>
-<span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>not_found_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 14:58:37.221411","level":"INFO","name":"MW Logger","pid":13305,"msg":"Incomming request (id 74b735dc-dd49-11e9-a0a8-42010a140090): /no"}
-#&gt; {"timestamp":"2019-09-22 14:58:37.224072","level":"INFO","name":"MW Logger","pid":13305,"msg":"Outgoing response (id 74b735dc-dd49-11e9-a0a8-42010a140090): 404 Not Found"}</div><div class='output co'>#&gt; &lt;Response&gt;
+<span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>not_found_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 15:12:49.928193","level":"INFO","name":"MW Logger","pid":13297,"msg":"Incomming request (id 70f7ab1e-dd4b-11e9-9477-42010a140054): /no"}
+#&gt; {"timestamp":"2019-09-22 15:12:49.930971","level":"INFO","name":"MW Logger","pid":13297,"msg":"Outgoing response (id 70f7ab1e-dd4b-11e9-9477-42010a140054): 404 Not Found"}</div><div class='output co'>#&gt; &lt;Response&gt;
 #&gt;   Public:
 #&gt;     append_header: function (name, value) 
 #&gt;     body: list
@@ -328,8 +328,8 @@ Adds endpoint to show <a href='https://swagger.io/tools/swagger-ui/'>Swagger UI<
 #&gt;     status_code: 404
 #&gt;     to_rserve: function () 
 #&gt;     unset_cookie: function (name) 
-#&gt;     unset_date: function () </div><div class='input'><span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>status_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 14:58:37.261959","level":"INFO","name":"MW Logger","pid":13305,"msg":"Incomming request (id 74b7611a-dd49-11e9-a0a8-42010a140090): /status"}
-#&gt; {"timestamp":"2019-09-22 14:58:37.294812","level":"INFO","name":"MW Logger","pid":13305,"msg":"Outgoing response (id 74b7611a-dd49-11e9-a0a8-42010a140090): 200 OK"}</div><div class='output co'>#&gt; &lt;Response&gt;
+#&gt;     unset_date: function () </div><div class='input'><span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>status_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 15:12:49.971847","level":"INFO","name":"MW Logger","pid":13297,"msg":"Incomming request (id 70f7d8fa-dd4b-11e9-9477-42010a140054): /status"}
+#&gt; {"timestamp":"2019-09-22 15:12:50.008289","level":"INFO","name":"MW Logger","pid":13297,"msg":"Outgoing response (id 70f7d8fa-dd4b-11e9-9477-42010a140054): 200 OK"}</div><div class='output co'>#&gt; &lt;Response&gt;
 #&gt;   Public:
 #&gt;     append_header: function (name, value) 
 #&gt;     body: OK
@@ -355,11 +355,11 @@ Adds endpoint to show <a href='https://swagger.io/tools/swagger-ui/'>Swagger UI<
 #&gt;     status_code: 200
 #&gt;     to_rserve: function () 
 #&gt;     unset_cookie: function (name) 
-#&gt;     unset_date: function () </div><div class='input'><span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>desc_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 14:58:37.297811","level":"INFO","name":"MW Logger","pid":13305,"msg":"Incomming request (id 74b78d84-dd49-11e9-a0a8-42010a140090): /desc"}
-#&gt; {"timestamp":"2019-09-22 14:58:37.298432","level":"INFO","name":"MW Logger","pid":13305,"msg":"Outgoing response (id 74b78d84-dd49-11e9-a0a8-42010a140090): 200 OK"}</div><div class='output co'>#&gt; &lt;Response&gt;
+#&gt;     unset_date: function () </div><div class='input'><span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>desc_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 15:12:50.011659","level":"INFO","name":"MW Logger","pid":13297,"msg":"Incomming request (id 70f803ca-dd4b-11e9-9477-42010a140054): /desc"}
+#&gt; {"timestamp":"2019-09-22 15:12:50.012382","level":"INFO","name":"MW Logger","pid":13297,"msg":"Outgoing response (id 70f803ca-dd4b-11e9-9477-42010a140054): 200 OK"}</div><div class='output co'>#&gt; &lt;Response&gt;
 #&gt;   Public:
 #&gt;     append_header: function (name, value) 
-#&gt;     body: /tmp/RtmprBuhWj/temp_libpath33b24ec129ca/RestRserve/DESC ...
+#&gt;     body: /tmp/RtmpJrrYmm/temp_libpath33825753d56c/RestRserve/DESC ...
 #&gt;     clone: function (deep = FALSE) 
 #&gt;     content_type: text/plain
 #&gt;     context: environment
@@ -382,8 +382,8 @@ Adds endpoint to show <a href='https://swagger.io/tools/swagger-ui/'>Swagger UI<
 #&gt;     status_code: 200
 #&gt;     to_rserve: function () 
 #&gt;     unset_cookie: function (name) 
-#&gt;     unset_date: function () </div><div class='input'><span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>say_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 14:58:37.300952","level":"INFO","name":"MW Logger","pid":13305,"msg":"Incomming request (id 74b7b8c2-dd49-11e9-a0a8-42010a140090): /say/anonym"}
-#&gt; {"timestamp":"2019-09-22 14:58:37.301742","level":"INFO","name":"MW Logger","pid":13305,"msg":"Outgoing response (id 74b7b8c2-dd49-11e9-a0a8-42010a140090): 200 OK"}</div><div class='output co'>#&gt; &lt;Response&gt;
+#&gt;     unset_date: function () </div><div class='input'><span class='no'>app</span>$<span class='fu'>process_request</span>(<span class='no'>say_rq</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 15:12:50.015182","level":"INFO","name":"MW Logger","pid":13297,"msg":"Incomming request (id 70f82dc8-dd4b-11e9-9477-42010a140054): /say/anonym"}
+#&gt; {"timestamp":"2019-09-22 15:12:50.016134","level":"INFO","name":"MW Logger","pid":13297,"msg":"Outgoing response (id 70f82dc8-dd4b-11e9-9477-42010a140054): 200 OK"}</div><div class='output co'>#&gt; &lt;Response&gt;
 #&gt;   Public:
 #&gt;     append_header: function (name, value) 
 #&gt;     body: anonym say “Hola”
