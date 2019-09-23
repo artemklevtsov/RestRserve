@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Project goals • RestRserve</title>
+<title>Page not found (404) • RestRserve</title>
 
 
 <!-- jquery -->
@@ -29,16 +29,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="http://restrserve.org/pkgdown.css" rel="stylesheet">
+<script src="http://restrserve.org/pkgdown.js"></script>
 
 
 
 
-<meta property="og:title" content="Project goals" />
+<meta property="og:title" content="Page not found (404)" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -66,8 +66,8 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">RestRserve</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.0</span>
+        <a class="navbar-link" href="http://restrserve.org/index.html">RestRserve</a>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -113,86 +113,10 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Project goals</h1>
+      <h1>Page not found (404)</h1>
     </div>
 
-
-<div id="project-goals" class="section level1">
-
-<ul>
-<li>develop high-performance <strong>http interface</strong> which will allow to use R code as a <strong>backend</strong> for web-services</li>
-<li>make creation and deployment of applications simple and robust</li>
-<li>work nice with docker</li>
-</ul>
-</div>
-<div id="development" class="section level1">
-<h1 class="hasAnchor">
-<a href="#development" class="anchor"></a>Development</h1>
-<div id="design" class="section level3">
-<h3 class="hasAnchor">
-<a href="#design" class="anchor"></a>Design</h3>
-<ul>
-<li>minimal number of dependencies
-<ul>
-<li><code>Rserve</code></li>
-<li>
-<code>R6</code> (which has 0 zero dependencies)</li>
-<li>
-<code>swagger</code> (swagger-ui assets)</li>
-<li>
-<code>yaml</code> (used for OpenAPI and actually not absolutely necessary)</li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="programming-style" class="section level3">
-<h3 class="hasAnchor">
-<a href="#programming-style" class="anchor"></a>Programming style</h3>
-<ul>
-<li>we use <code>=</code> for assignement</li>
-<li>for <code>R6</code> classes we use CamelCase</li>
-<li>for the rest we use snake_case</li>
-<li>we don’t use <code>.</code> inside names</li>
-<li>stick to base R style (except point above)</li>
-<li>fail fast - catch errors at the early stages</li>
-</ul>
-</div>
-</div>
-<div id="rserve-resources" class="section level1">
-<h1 class="hasAnchor">
-<a href="#rserve-resources" class="anchor"></a>Rserve resources</h1>
-<p><a href="https://github.com/s-u/Rserve/">Rserve</a> is amazing software highly undervalued by the community. Here we keep links to useful resources about Rserve:</p>
-<ol>
-<li>Official Rserve page on Rforge - <a href="http://rforge.net/Rserve/news.html">news section</a>
-</li>
-<li>Description of the <strong>configuration</strong> on <a href="https://github.com/s-u/Rserve/wiki/rserve.conf">github wiki</a> - <strong>not complete</strong>. For most detailed information it worths to check source code - <a href="https://github.com/s-u/Rserve/blob/05ff32d3c4512954a99162d392d0465d432d591e/src/Rserv.c#L1094">setConfig function</a> in <code>Rserve.c</code>
-</li>
-<li>
-<strong>http</strong> interface:
-<ul>
-<li>
-<strong>request</strong> object format. Rserve passes 4 values (<code>url</code>, <code>query</code>, <code>body</code>, <code>headers</code>) to the R code. Parsing logic is described in <a href="https://github.com/s-u/FastRWeb/blob/aaf8847f11903675b1ec7eb9c0e1cc98b92512e5/R/run.R#L58">FastRWeb::.http.request</a> and <a href="https://github.com/dselivanov/RestRserve/blob/4aecbfb18b8403908c727fa478d161247d591764/R/request.R#L4">RestRserve:::parse_request</a> functions</li>
-<li>
-<strong>response</strong> object from R code defined in <a href="https://github.com/s-u/Rserve/blob/05ff32d3c4512954a99162d392d0465d432d591e/src/http.c#L353-L372">http.c</a> function inside <code>Rserve.c</code>
-</li>
-</ul>
-</li>
-<li>Some discissions at issue tracker
-<ul>
-<li><a href="https://github.com/s-u/Rserve/issues/64">RServe for real-time</a></li>
-</ul>
-</li>
-<li>
-<a href="https://stackoverflow.com/questions/tagged/rserve">Rserve tag</a> on StackOverflow</li>
-</ol>
-</div>
-<div id="drafting-a-release" class="section level1">
-<h1 class="hasAnchor">
-<a href="#drafting-a-release" class="anchor"></a>Drafting a release</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">git</span> tag -a v0.1.5 -m <span class="st">"version 0.1.5"</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">git</span> push origin master --tags</a></code></pre></div>
-</div>
-
+Content not found. Please use links in the navbar.
 
   </div>
 
@@ -202,7 +126,7 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://dsnotes.com'>Dmitriy Selivanov</a>, Artem Klevtsov.</p>
+  <p>Developed by Dmitriy Selivanov, Artem Klevtsov.</p>
 </div>
 
 <div class="pkgdown">

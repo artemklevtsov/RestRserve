@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Articles • RestRserve</title>
+<title>Function reference • RestRserve</title>
 
 
 <!-- jquery -->
@@ -35,10 +35,10 @@
 
 
 
-<meta property="og:title" content="Articles" />
+<meta property="og:title" content="Function reference" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -54,7 +54,7 @@
   </head>
 
   <body>
-    <div class="container template-article-index">
+    <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -67,7 +67,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RestRserve</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -111,26 +111,121 @@
       </header>
 
 <div class="row">
-  <div class="col-md-9 contents">
+  <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Articles</h1>
+      <h1>Reference</h1>
     </div>
 
-    <div class="section ">
-      <h3>All vignettes</h3>
-      <p class="section-desc"></p>
+    <table class="ref-index">
 
-      <ul>
-        <li><a href="quick-start.html">Quick Start Guide</a></li>
-      </ul>
-    </div>
+    <colgroup>
+      
+      <col class="alias" />
+      <col class="title" />
+    </colgroup>
+
+    <tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="Application.html">Application</a></code> </p>
+        </td>
+        <td><p>Creates application - RestRserve usage starts from here</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="AuthBackendBasic.html">AuthBackendBasic</a></code> </p>
+        </td>
+        <td><p>Basic authorization backend</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="AuthBackendBearer.html">AuthBackendBearer</a></code> </p>
+        </td>
+        <td><p>Bearer token authorization backend</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="AuthMiddleware.html">AuthMiddleware</a></code> </p>
+        </td>
+        <td><p>Creates authorization middleware object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="ContentHandlers.html">ContentHandlers</a></code> </p>
+        </td>
+        <td><p>Content handlers collection</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="HTTPError.html">HTTPError</a></code> </p>
+        </td>
+        <td><p>Helps to generate http error responses</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Logger.html">Logger</a></code> </p>
+        </td>
+        <td><p>Simple logging utility</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Middleware.html">Middleware</a></code> </p>
+        </td>
+        <td><p>Creates middleware object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Request.html">Request</a></code> </p>
+        </td>
+        <td><p>Creates request object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Response.html">Response</a></code> </p>
+        </td>
+        <td><p>Creates response object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="http-date.html">to_http_date()</a></code> <code><a href="http-date.html">from_http_date()</a></code> </p>
+        </td>
+        <td><p>Dealing with HTTP Dates</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="raise.html">raise()</a></code> </p>
+        </td>
+        <td><p>Interrupts request processing</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="to_json.html">to_json()</a></code> </p>
+        </td>
+        <td><p>Simple JSON encoder</p></td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li><a href="#section-all-functions">All functions</a></li>
+    </ul>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://dsnotes.com'>Dmitriy Selivanov</a>, Artem Klevtsov.</p>
+  <p>Developed by Dmitriy Selivanov, Artem Klevtsov.</p>
 </div>
 
 <div class="pkgdown">

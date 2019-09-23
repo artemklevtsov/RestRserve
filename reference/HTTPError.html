@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Simple logging utility — Logger • RestRserve</title>
+<title>Helps to generate http error responses — HTTPError • RestRserve</title>
 
 
 <!-- jquery -->
@@ -35,13 +35,13 @@
 
 
 
-<meta property="og:title" content="Simple logging utility — Logger" />
-<meta property="og:description" content="Creates Logger object which can be used for logging with different level of
-verbosity. Log messages are in JSON format." />
+<meta property="og:title" content="Helps to generate http error responses — HTTPError" />
+<meta property="og:description" content="Helps to generate http error responses See raise for example.
+Contains RestRserve:::HTTPErrorFactory class for the exception in the user's code." />
 <meta name="twitter:card" content="summary" />
 
 
-<meta name="robots" content="noindex">
+
 
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
@@ -70,7 +70,7 @@ verbosity. Log messages are in JSON format." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">RestRserve</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.2.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -116,14 +116,14 @@ verbosity. Log messages are in JSON format." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Simple logging utility</h1>
+    <h1>Helps to generate http error responses</h1>
     
-    <div class="hidden name"><code>Logger.Rd</code></div>
+    <div class="hidden name"><code>HTTPError.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Creates Logger object which can be used for logging with different level of
-verbosity. Log messages are in JSON format.</p>
+    <p>Helps to generate http error responses See <a href='raise.html'>raise</a> for example.
+Contains <code>RestRserve:::HTTPErrorFactory</code> class for the exception in the user's code.</p>
     </div>
 
 
@@ -131,20 +131,15 @@ verbosity. Log messages are in JSON format.</p>
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p><a href='https://rdrr.io/pkg/R6/man/R6Class.html'>R6::R6Class</a> object.</p>
-    <h2 class="hasAnchor" id="construction"><a class="anchor" href="#construction"></a>Construction</h2>
+    <h2 class="hasAnchor" id="fields"><a class="anchor" href="#fields"></a>Fields</h2>
 
     
-<pre>Logger$new(level = "info", name = "ROOT", printer = NULL)
-</pre>
+
 <ul>
-<li><p><code>level</code> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Log level. Allowed values: info, fatal, error, warn, debug, trace, off, all.</p></li>
-<li><p><code>name</code> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Logger name.</p></li>
-<li><p><code>printer</code> :: <code>function</code><br />
-Logger with sink defined by <code>printer</code> function.
-It should have signature <code>function(timestamp, level, logger_name, pid, message)</code>.
-By default when <code>printer = NULL</code> logger writes message in JSON format to <code>stdout</code>.</p></li>
+<li><p><code>content_type</code> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+Type of the error response.</p></li>
+<li><p><code>encode</code> :: <code>function</code><br />
+Function to encode response body.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
@@ -152,57 +147,34 @@ By default when <code>printer = NULL</code> logger writes message in JSON format
     
 
 <ul>
-<li><p><code>set_name(name = "ROOT")</code><br />
+<li><p><code>set_content_type(content_type)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code>self</code><br />
-Sets logger name.</p></li>
-<li><p><code>set_log_level(level = "info")</code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code>self</code><br />
-Sets log level.</p></li>
-<li><p><code>set_printer(FUN = NULL)</code><br />
+Set content type of response.</p></li>
+<li><p><code>set_encode(encode)</code><br />
 <code>function</code> -&gt; <code>self</code><br />
-Sets function which defines how to print logs.
-<code>FUN</code> should be a function with 6 formal arguments: timestamp, level,
-logger_name, pid, message.</p></li>
-<li><p><code><a href='https://rdrr.io/r/base/trace.html'>trace(msg, ...)</a></code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>any</code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Write trace message.</p></li>
-<li><p><code><a href='https://rdrr.io/r/base/debug.html'>debug(msg, ...)</a></code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>any</code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Write debug message.</p></li>
-<li><p><code>info(msg, ...)</code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>any</code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Write info message.</p></li>
-<li><p><code>warn(msg, ...)</code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>any</code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Write warning message.</p></li>
-<li><p><code>error(msg, ...)</code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>any</code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Write error message.</p></li>
-<li><p><code>fatal(msg, ...)</code><br />
-<code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>any</code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
-Write fatal error message.</p></li>
+Set encode for the given content type.</p></li>
+<li><p><code>error(status_code, body, ...)</code><br />
+<code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>, <code><a href='https://rdrr.io/r/base/raw.html'>raw()</a></code> | <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code>, <code>...</code> -&gt; <a href='Response.html'>Response</a>
+<code>...</code> - additional named arguments which will be pased to <code>Response$new(...)</code>.
+<code>headers</code> may be particularly useful.
+Generate HTTP error response</p></li>
+<li><p><code>reset()</code><br />
+-&gt; `self``<br />
+Resets HTTPError to the default RestRserve state</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><a href='https://rdrr.io/pkg/lgr/man/Logger.html'>lgr::Logger</a></p></div>
+    <div class='dont-index'><p><a href='Application.html'>Application</a></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># init logger</span>
-<span class='no'>logger</span> <span class='kw'>=</span> <span class='no'>Logger</span>$<span class='fu'>new</span>(<span class='st'>"info"</span>)
-<span class='co'># write info message</span>
-<span class='no'>logger</span>$<span class='fu'>info</span>(<span class='st'>"hello world"</span>)</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 15:12:51.718492","level":"INFO","name":"ROOT","pid":13297,"msg":"hello world"}</div><div class='input'><span class='co'># write extended log entry</span>
-<span class='no'>logger</span>$<span class='fu'>info</span>(<span class='st'>""</span>, <span class='kw'>context</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>message</span> <span class='kw'>=</span> <span class='st'>"hello world"</span>, <span class='kw'>code</span> <span class='kw'>=</span> <span class='fl'>0L</span>))</div><div class='output co'>#&gt; {"timestamp":"2019-09-22 15:12:51.719957","level":"INFO","name":"ROOT","pid":13297,"msg":"","context":{"message":"hello world","code":0}}</div><div class='input'>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#format">Format</a></li>
-      <li><a href="#construction">Construction</a></li>
+      <li><a href="#fields">Fields</a></li>
       <li><a href="#methods">Methods</a></li>
       <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
@@ -211,7 +183,7 @@ Write fatal error message.</p></li>
 
       <footer>
       <div class="copyright">
-  <p>Developed by <a href='http://dsnotes.com'>Dmitriy Selivanov</a>, Artem Klevtsov.</p>
+  <p>Developed by Dmitriy Selivanov, Artem Klevtsov.</p>
 </div>
 
 <div class="pkgdown">
