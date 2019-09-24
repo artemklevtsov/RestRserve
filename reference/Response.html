@@ -144,24 +144,24 @@
     
 
 <ul>
-<li><p><code>content_type</code> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+<li><p><strong><code>content_type</code></strong> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
 Response body content (media) type. Will be translated to <code>Content-type</code> header.</p></li>
-<li><p><code>body</code> :: <code><a href='https://rdrr.io/r/base/raw.html'>raw()</a></code> | <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+<li><p><strong><code>body</code></strong> :: <code><a href='https://rdrr.io/r/base/raw.html'>raw()</a></code> | <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
 Response body.
 If it is a named character with a name <code>file</code> or <code>tmpfile</code>
 then the value is considered as a path to a file and content oh this file
 is served as body. The latter will be deleted once served.</p></li>
-<li><p><code>status_code</code> :: <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code><br />
+<li><p><strong><code>status_code</code></strong> :: <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code><br />
 Response status code.</p></li>
-<li><p><code>headers</code> :: <code>named list()</code><br />
+<li><p><strong><code>headers</code></strong> :: <code>named list()</code><br />
 Response headers.</p></li>
-<li><p><code>cookies</code> :: <code>named list()</code><br />
+<li><p><strong><code>cookies</code></strong> :: <code>named list()</code><br />
 Response cookies. Will be translated to <code>Set-Cookie</code> headers.</p></li>
-<li><p><code>context</code> :: <code><a href='https://rdrr.io/r/base/environment.html'>environment()</a></code><br />
+<li><p><strong><code>context</code></strong> :: <code><a href='https://rdrr.io/r/base/environment.html'>environment()</a></code><br />
 Environment to store any data. Can be used in middlewares.</p></li>
-<li><p><code>encode</code> :: <code>function</code><br />
+<li><p><strong><code>encode</code></strong> :: <code>function</code><br />
 unction to encode body for specific content</p></li>
-<li><p><code>status</code> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+<li><p><strong><code>status</code></strong> :: <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
 Paste together status code and description.</p></li>
 </ul>
 
@@ -170,49 +170,49 @@ Paste together status code and description.</p></li>
     
 
 <ul>
-<li><p><code>set_content_type(content_type = 'text/plain')</code><br />
+<li><p><strong><code>set_content_type</code></strong><code>(content_type = 'text/plain')</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code>self</code><br />
 Set content type for response body.</p></li>
-<li><p><code>set_status_code(code)</code><br />
+<li><p><strong><code>set_status_code</code></strong><code>(code)</code><br />
 <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code> -&gt; <code>self</code><br />
 Set status code for response. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Status'>docs on MDN</a>.</p></li>
-<li><p><code>has_header(name)</code><br />
+<li><p><strong><code>has_header</code></strong><code>(name)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
 Determine whether or not the response header exists.</p></li>
-<li><p><code>get_header(name)</code><br />
+<li><p><strong><code>get_header</code></strong><code>(name)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code><br />
 Get HTTP response header value.</p></li>
-<li><p><code>set_header(name, value)</code><br />
+<li><p><strong><code>set_header</code></strong><code>(name, value)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> -&gt; <code>self</code><br />
 Set HTTP response header. <code>Content-type</code> and <code>Content-length</code> headers not
 allowed (use <code>content_type</code> field instead).</p></li>
-<li><p><code>append_header(name, value)</code><br />
+<li><p><strong><code>append_header</code></strong><code>(name, value)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/character.html'>character()</a></code> -&gt; <code>self</code><br />
 Append HTTP response header. If header exists <code>,</code> separator will be used.
 Don't use this method to set cookie (use <code>set_cookie</code> method instead).</p></li>
-<li><p><code>delete_header(name)</code><br />
+<li><p><strong><code>delete_header</code></strong><code>(name)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
 Unset HTTP response header.</p></li>
-<li><p><code>set_cookie(name, value, expires = NULL, max_age = NULL, domain = NULL, path = NULL, secure = NULL, http_only = NULL)</code><br />
+<li><p><strong><code>set_cookie</code></strong><code>(name, value, expires = NULL, max_age = NULL, domain = NULL, path = NULL, secure = NULL, http_only = NULL)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/DateTimeClasses.html'>POSIXct(1)</a></code>, <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>,
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>, <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> -&gt; <code>self</code><br />
 Set cookie. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie'>docs on MDN</a>.</p></li>
-<li><p><code>unset_cookie(name)</code><br />
+<li><p><strong><code>unset_cookie</code></strong><code>(name)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
 Unset cookie with given name.</p></li>
-<li><p><code>set_date(dtm = Sys.time())</code><br />
+<li><p><strong><code>set_date</code></strong><code>(dtm = Sys.time())</code><br />
 <code><a href='https://rdrr.io/r/base/DateTimeClasses.html'>POSIXct(1)</a></code> -&gt; <code>self</code><br />
 Set <code>Date</code> HTTP header. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Date'>docs on MDN</a>.</p></li>
-<li><p><code>unset_date()</code><br />
+<li><p><strong><code>unset_date</code></strong><code>()</code><br />
 -&gt; <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
 Unset <code>Date</code> HTTP header.</p></li>
-<li><p><code>set_body(body)</code><br />
+<li><p><strong><code>set_body</code></strong><code>(body)</code><br />
 <code>any</code> -&gt; <code>self</code><br />
 Set response body.</p></li>
-<li><p><code>set_response(status_code, body = NULL, content_type = self$content_type)</code><br />
+<li><p><strong><code>set_response</code></strong><code>(status_code, body = NULL, content_type = self$content_type)</code><br />
 <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>, <code>any</code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code>self</code><br />
 Set response fields.</p></li>
-<li><p><code>to_rserve()</code><br />
+<li><p><strong><code>to_rserve</code></strong><code>()</code><br />
 -&gt; <code><a href='https://rdrr.io/r/base/list.html'>list()</a></code><br />
 Convert <code>self</code> object to Rserve compatible structure.
 <a href='https://github.com/s-u/Rserve/blob/e6b2b6b10e92b6e201d34a05394b2186fda30696/src/http.c#L353-L372'>According to</a> returned list should have the following structure:</p><ul>
@@ -265,8 +265,8 @@ appended and neither <code>Content-type</code> nor <code>Content-length</code> m
 #&gt;   status code: 200 OK
 #&gt;   content-type: text/plain
 #&gt;   &lt;Headers&gt;
-#&gt;     Date: Tue, 24 Sep 2019 10:33:59 GMT
-#&gt;     Last-Modified: Tue, 24 Sep 2019 10:33:09 GMT</div><div class='input'>
+#&gt;     Date: Tue, 24 Sep 2019 10:47:09 GMT
+#&gt;     Last-Modified: Tue, 24 Sep 2019 10:46:12 GMT</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
