@@ -195,7 +195,7 @@ Don't use this method to set cookie (use <code>set_cookie</code> method instead)
 Unset HTTP response header.</p></li>
 <li><p><code>set_cookie(name, value, expires = NULL, max_age = NULL, domain = NULL, path = NULL, secure = NULL, http_only = NULL)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/DateTimeClasses.html'>POSIXct(1)</a></code>, <code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>,
-<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>, <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
+<code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code>, <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code>, <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code> -&gt; <code>self</code><br />
 Set cookie. See <a href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie'>docs on MDN</a>.</p></li>
 <li><p><code>unset_cookie(name)</code><br />
 <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code><a href='https://rdrr.io/r/base/logical.html'>logical(1)</a></code><br />
@@ -210,7 +210,7 @@ Unset <code>Date</code> HTTP header.</p></li>
 <code>any</code> -&gt; <code>self</code><br />
 Set response body.</p></li>
 <li><p><code>set_response(status_code, body = NULL, content_type = self$content_type)</code><br />
-<code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>, <code>any</code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code><br />
+<code><a href='https://rdrr.io/r/base/integer.html'>integer(1)</a></code>, <code>any</code>, <code><a href='https://rdrr.io/r/base/character.html'>character(1)</a></code> -&gt; <code>self</code><br />
 Set response fields.</p></li>
 <li><p><code>to_rserve()</code><br />
 -&gt; <code><a href='https://rdrr.io/r/base/list.html'>list()</a></code><br />
@@ -265,8 +265,8 @@ appended and neither <code>Content-type</code> nor <code>Content-length</code> m
 #&gt;   status code: 200 OK
 #&gt;   content-type: text/plain
 #&gt;   &lt;Headers&gt;
-#&gt;     Date: Mon, 23 Sep 2019 12:19:31 GMT
-#&gt;     Last-Modified: Mon, 23 Sep 2019 12:18:40 GMT</div><div class='input'>
+#&gt;     Date: Tue, 24 Sep 2019 08:29:32 GMT
+#&gt;     Last-Modified: Tue, 24 Sep 2019 08:28:42 GMT</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
